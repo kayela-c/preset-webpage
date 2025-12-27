@@ -20,6 +20,7 @@ export default (editor: Editor, opts: RequiredPluginOptions) => {
   const obl = 'open-blocks';
   const ful = 'fullscreen';
   const prv = 'preview';
+  const sav = 'save';
   const iconStyle = 'style="display: block; max-width:22px"';
 
   config.showDevices = false;
@@ -78,6 +79,12 @@ export default (editor: Editor, opts: RequiredPluginOptions) => {
         command: () => editor.runCommand(expt),
         label: `<svg ${iconStyle} viewBox="0 0 24 24">
             <path fill="currentColor" d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" />
+        </svg>`
+      },{
+        id: sav,
+        command: () => editor.store({}),
+        label: `<svg ${iconStyle} viewBox="0 0 24 24">
+            <path fill="currentColor" d="M17,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M6,5H15V9H6V5Z" />
         </svg>`
       },{
         id: 'undo',
